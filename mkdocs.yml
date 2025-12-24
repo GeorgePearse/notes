@@ -1,0 +1,74 @@
+site_name: Notes
+site_url: https://georgepearse.github.io/notes
+repo_url: https://github.com/GeorgePearse/notes
+repo_name: GeorgePearse/notes
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - admonition
+  - pymdownx.details
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - CUDA:
+    - NVIDIA Stack Overview: cuda/nvidia-stack-overview.md
+    - cuBLAS: cuda/cublas.md
+    - cuDNN vs cuBLAS: cuda/cudnn-vs-cublas.md
+    - NCCL: cuda/nccl.md
+    - TensorRT: cuda/tensorrt.md
+    - FMHA in cuDNN: cuda/fmha-cudnn.md
+    - Matmul Explained: cuda/matmul-explained.md
+    - BF16 vs FP16: cuda/bf16-vs-fp16.md
+    - Triton vs CUDA: cuda/triton-vs-cuda.md
+    - Auto-tuning: cuda/cuda-autotuning.md
+    - Nsight Profiling: cuda/nsight-profiling.md
+    - Build Backends: cuda/build-backends-for-cuda.md
+    - Ninja + uv Compatibility: cuda/ninja-uv-compatibility.md
+  - Object Detection:
+    - Overview: object_detection/overview.md
+    - Common Components: object_detection/common-components.md
+    - R-CNN Family: object_detection/rcnn-family.md
+    - YOLO: object_detection/yolo.md
+    - SSD & RetinaNet: object_detection/ssd-retinanet.md
+    - Anchor-Free: object_detection/anchor-free.md
+    - DETR Family: object_detection/detr-family.md
+  - Deployment:
+    - Rust Hosting: deployment/rust.md
+  - Optimization:
+    - Evolution Strategies: optimization/evolution-strategies.md
+  - Economics:
+    - Keynesian Beauty Contest: economics/keynesian-beauty-contest.md
+  - Health:
+    - Environmental Health: health/environmental-health.md
+  - Tools:
+    - CLI RAM Usage: tools/cli-ram-usage.md
+  - Reading:
+    - Reading List: reading-list.md
+    - Books: books.md
