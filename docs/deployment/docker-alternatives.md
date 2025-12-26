@@ -69,6 +69,30 @@
 - Deploy containers globally with simple CLI
 - Good for edge deployment
 
+## Community Opinions: Podman vs Docker
+
+Sources: [r/selfhosted discussion](https://www.reddit.com/r/selfhosted/comments/1itxtp5/how_many_of_you_use_podman_instead_of_docker/), [Self-Hosted Podcast #93](https://selfhosted.show/93), [XDA](https://www.xda-developers.com/podman-better-docker-self-host/)
+
+### Consistent Opinions (widely agreed)
+
+**Why people switch to Podman:**
+- **Docker's licensing/business model** - Docker Hub's paid org requirements and Docker Desktop licensing pushed many to explore alternatives
+- **Rootless by default** - Security benefit consistently praised; no daemon running as root
+- **Drop-in replacement works** - `alias docker=podman` genuinely works for ~95% of use cases
+- **Systemd integration** - Native integration for auto-start on boot, proper service management
+
+**Acknowledged trade-offs:**
+- **Rootless has limitations** - Can't bind to ports < 1024, some tools don't work inside containers
+- **Slight performance penalty** - Rootless networking tops out at 2-4 Gbps vs Docker's 8-10 Gbps
+- **Startup latency** - Docker ~150-200ms vs Podman ~200-300ms (marginal for most use cases)
+- **Older distros** - May need manual compilation; `generate systemd` deprecated in favor of quadlets
+
+### The Pragmatic Take
+
+Most switchers moved for **business/licensing reasons** rather than pure technical superiority. For self-hosters doing nothing "too advanced," Podman is effectively equivalent. The security benefits (rootless, daemonless) are real but matter most in multi-tenant or high-security environments.
+
+Docker still leads with 59% developer adoption (Stack Overflow 2024), but the gap is closing.
+
 ## Summary
 
 | Tool | Best For | Docker Compatibility |
