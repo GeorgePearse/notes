@@ -22,3 +22,7 @@ Documented RAM usage for AI coding assistants and CLI tools.
 - **Codex CLI** - Built in Rust, officially "lightweight", 4GB minimum
 - **Aider** - Consistently described as lightweight, Python-based
 - **GitHub Copilot** - Offloads to cloud, ~300-400MB baseline
+
+## Resources
+
+- [OpenCode Plugins](https://opencode.ai/docs/plugins/) - OpenCode supports custom plugins (JS/TS) that hook into events and extend functionality. Plugins can subscribe to session/file/tool events, define custom tools with schemas, customize session compaction, and enforce policies like file protection. Loaded from `.opencode/plugin` (project) or `~/.config/opencode/plugin` (global).
